@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:share/share.dart';
+import 'package:share_plus/share_plus.dart';
 
 /// Screenshot manager to capture the screen in different ways
 class TakeScreenshotController {
@@ -46,7 +46,7 @@ class TakeScreenshotController {
   }) async {
     return Future.delayed(delay, () async {
       try {
-        final  boundary = _getRenderRepaintBoundary();
+        final boundary = _getRenderRepaintBoundary();
 
         return await _getPngBytes(boundary, pixelRatio);
       } on Exception {
@@ -58,7 +58,7 @@ class TakeScreenshotController {
   ///Captures a [ui.Image]. [delay] is to avoid a bug, you do not need to send it
   Future<ui.Image> captureAsUiImage(
       {double pixelRatio = 1,
-        Duration delay = const Duration(milliseconds: 20)}) async {
+      Duration delay = const Duration(milliseconds: 20)}) async {
     return Future.delayed(delay, () async {
       try {
         final boundary = _getRenderRepaintBoundary();
@@ -93,7 +93,7 @@ class TakeScreenshotController {
   /// Convert [RenderObject] to [RenderRepaintBoundary]
   RenderRepaintBoundary _getRenderRepaintBoundary() {
     return _containerKey.currentContext!.findRenderObject()!
-    as RenderRepaintBoundary;
+        as RenderRepaintBoundary;
   }
 
   /// Take a [RenderRepaintBoundary] and convert it to [Uint8List]
@@ -124,9 +124,9 @@ class TakeScreenshot extends StatefulWidget {
 
   const TakeScreenshot(
       {Key? key,
-        required this.child,
-        required this.controller,
-        this.containerKey})
+      required this.child,
+      required this.controller,
+      this.containerKey})
       : super(key: key);
 
   @override

@@ -1,18 +1,17 @@
 name: take_screenshot
-description: Package to take screenshots in different ways and be able to share them in png format with other applications
-version: 0.0.1
+description: Package to take screenshots in different ways and be able to share them
+  in png format with other applications
+version: 0.0.2
 homepage: https://github.com/CamiiloAF/take_screenshot
-
 environment:
-  sdk: ">=2.12.0 <3.0.0"
-  flutter: ">=1.17.0"
+  sdk: '>=2.14.0 <3.0.0'
 
 dependencies:
   flutter:
     sdk: flutter
-  path_provider: ^2.0.1
-  share: ^2.0.1
-  pedantic: ^1.11.0
+  path_provider: ^2.0.9
+  pedantic: ^1.11.1
+  share_plus: ^4.0.4
 
 dev_dependencies:
   flutter_test:
