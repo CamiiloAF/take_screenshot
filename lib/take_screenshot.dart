@@ -79,7 +79,7 @@ class TakeScreenshotController {
     String? text,
   }) async {
     try {
-      final file = await captureAsFile();
+      final file = await captureAsFile(path: path, pixelRatio: pixelRatio);
       await Share.shareFiles([file.path],
           mimeTypes: mimeTypes,
           sharePositionOrigin: sharePositionOrigin,
